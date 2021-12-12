@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 
 class Transformer(nn.Module):
-    def __init__(self, embedding_size, src_vocab_size, trg_vocab_size, src_pad_idx, num_heads, num_encoder_layers ,num_decoder_layers, forward_expansion, dropout, max_len, device):
+    def __init__(self, embedding_size=512, src_vocab_size, trg_vocab_size, src_pad_idx, num_heads=8, num_encoder_layers=6, num_decoder_layers=6, forward_expansion=4, dropout=0.1, max_len=100, device):
         super(Transformer, self).__init__()
         self.device = device
         self.src_word_embedding = nn.Embedding(num_embeddings=src_vocab_size, embedding_dim=embedding_size)
